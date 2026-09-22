@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: 255 255 255;
+    --bg-2: 248 248 249;
+    --card: 255 255 255;
+    --border: 228 228 231;
+    --border-strong: 212 212 216;
+    --text: 9 9 11;
+    --text-2: 113 113 122;
+    --muted: 161 161 170;
+    --acento: 245 113 26;
+    --acento-hover: 217 94 15;
+    --acento-soft: 255 238 224;
+    --acento-fg: 255 255 255;
+    --ok: 22 163 74;
+    --ok-soft: 234 247 238;
+    --warning: 230 165 45;
+    --warning-soft: 253 246 231;
+    --danger: 220 38 38;
+    --danger-soft: 254 236 236;
+    --navy: 30 41 82;
+    color-scheme: light;
+  }
+  .dark {
+    --bg: 9 9 11;
+    --bg-2: 15 15 18;
+    --card: 19 19 22;
+    --border: 32 32 36;
+    --border-strong: 48 48 54;
+    --text: 244 244 245;
+    --text-2: 161 161 170;
+    --muted: 113 113 122;
+    --acento: 255 138 66;
+    --acento-hover: 255 160 100;
+    --acento-soft: 42 24 13;
+    --acento-fg: 255 255 255;
+    --ok: 52 211 153;
+    --ok-soft: 14 38 30;
+    --warning: 240 184 74;
+    --warning-soft: 40 31 14;
+    --danger: 242 97 97;
+    --danger-soft: 44 16 16;
+    --navy: 165 180 252;
+    color-scheme: dark;
+  }
+  * { @apply border-border; }
+  html, body { @apply bg-bg text-text antialiased; font-feature-settings: 'cv11', 'ss01'; }
+  body { font-family: Inter, system-ui, sans-serif; }
+  .num { font-family: 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+  ::selection { background: rgb(var(--acento) / .25); }
+}
+
+@layer components {
+  .card { @apply rounded-2xl border border-border bg-card shadow-card; }
+  .kicker { @apply text-[10.5px] font-semibold uppercase tracking-[0.14em] text-acento; }
+  .label-xs { @apply text-[10.5px] font-semibold uppercase tracking-[0.12em] text-text-2; }
+  .input { @apply h-10 w-full rounded-[10px] border border-border bg-card px-3 text-sm text-text outline-none transition placeholder:text-muted focus:border-acento focus:ring-2 focus:ring-acento/20; }
+  .glow-bg {
+    background:
+      radial-gradient(60% 50% at 20% 10%, rgb(var(--acento) / .16), transparent 70%),
+      radial-gradient(40% 40% at 90% 90%, rgb(var(--acento) / .08), transparent 70%);
+  }
+  .scrollbar-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { background: rgb(var(--border-strong)); border-radius: 99px; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { scrollbar-width: none; }
+}
+
+/* Leaflet */
+.leaflet-container { font-family: Inter, system-ui, sans-serif; background: rgb(var(--bg-2)); border-radius: inherit; z-index: 0; }
+.dark .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.85) contrast(.9); }
+.leaflet-popup-content-wrapper, .leaflet-popup-tip { background: rgb(var(--card)); color: rgb(var(--text)); }
+.soe-pin { background: transparent; border: none; }
+
+@media print {
+  aside, header, nav, .no-print, [data-soe-floating] { display: none !important; }
+  main { padding: 0 !important; }
+  body { background: #fff; }
+}
+
+/* Animaciones de overlays — propiedades individuales (scale/translate/opacity), nunca `transform` (Regla A) */
+@keyframes soe-fade-in { from { opacity: 0 } to { opacity: 1 } }
+@keyframes soe-modal-in { from { opacity: 0; scale: .95; translate: 0 12px } to { opacity: 1; scale: 1; translate: 0 0 } }
+@keyframes soe-pop-in { from { opacity: 0; scale: .97 } to { opacity: 1; scale: 1 } }
+@keyframes soe-sheet-l { from { translate: -100% 0 } to { translate: 0 0 } }
+@keyframes soe-sheet-r { from { translate: 100% 0 } to { translate: 0 0 } }
+.soe-overlay[data-state='open'] { animation: soe-fade-in .2s ease-out }
+.soe-modal[data-state='open'] { animation: soe-modal-in .3s cubic-bezier(.2,.8,.2,1) }
+.soe-pop[data-state='open'], .soe-pop[data-state='delayed-open'] { animation: soe-pop-in .14s ease-out }
+.soe-sheet-left[data-state='open'] { animation: soe-sheet-l .28s cubic-bezier(.2,.8,.2,1) }
+.soe-sheet-right[data-state='open'] { animation: soe-sheet-r .28s cubic-bezier(.2,.8,.2,1) }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important } }
