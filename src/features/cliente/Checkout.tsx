@@ -68,7 +68,7 @@ export function Checkout({ p, open, onOpenChange }: { p: Producto; open: boolean
             <DialogDescription className="mx-auto max-w-sm">
               {L('Ahorraste {a}. Retiralo en {c} mostrando este código.', 'You saved {a}. Pick it up at {c} showing this code.', { a: formatMoney(ahorroUsd, 'USD', lang), c: d.comercios.find((c) => c.id === p.comercioId)?.nombre ?? '' })}
             </DialogDescription>
-            <div className="num mx-auto mt-4 w-fit rounded-xl border border-dashed border-acento/50 bg-acento-soft px-5 py-2.5 text-lg font-bold tracking-[0.3em] text-acento">{p.id.slice(-6).toUpperCase().padStart(6, '0')}</div>
+            <div className="num mx-auto mt-4 w-fit rounded-xl border border-dashed border-acento/50 bg-acento-soft px-5 py-2.5 text-lg font-bold tracking-[0.3em] text-acento">{(p.id.replace(/\D/g, '') + '482913').slice(0, 6)}</div>
             <div className="mt-6 flex justify-center gap-2">
               <Button variant="secondary" onClick={() => { onOpenChange(false); navigate('/explorar') }}>
                 {L('Seguir explorando', 'Keep exploring')}
@@ -122,7 +122,7 @@ export function Checkout({ p, open, onOpenChange }: { p: Producto; open: boolean
                 <span className="num font-semibold">-{formatMoney(convert(p.precioOriginalCents - p.precioFinalCents, p.moneda, moneda, rates), moneda, lang)}</span>
               </div>
               <div className="mt-1.5 flex justify-between text-text-2">
-                <span>{L('Comisión del método', 'Method fee')}</span>
+                <span>{L('Comisión del método · la absorbe el comercio', 'Method fee · covered by the shop')}</span>
                 <span className="num">{fee ? formatMoney(convert(fee, 'USD', moneda, rates), moneda, lang) : L('Sin costo', 'Free')}</span>
               </div>
               <div className="my-3 h-px bg-border" />
@@ -143,7 +143,7 @@ export function Checkout({ p, open, onOpenChange }: { p: Producto; open: boolean
                 </>
               ) : (
                 <>
-                  <Lock /> {L('Pagar {m}', 'Pay {m}', { m: formatMoney(monto, moneda, lang) })}
+                  <Lock /> {L('Pagar {m}', 'Pay {m}', { m: formatMoney(monto, moneda, lang, { decimals: true }) })}
                 </>
               )}
             </Button>

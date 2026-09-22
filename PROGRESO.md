@@ -16,8 +16,8 @@
 - **B10** — Welcome modal + tour por rol (máscara SVG, scrollIntoView + reintentos, Sheet abierto en mobile).
 - **B11** — Modo Trailer (9 escenas, cursor virtual con click() real, captions de vidrio, loop, datos efímeros).
 
-## En curso
-- B12 · QA final.
+## En curso (QA hecho en navegador)
+- B12 · QA: login→propuesta→welcome→tour, dashboard admin, compra en checkout (Binance/USDT), publicar producto (aparece en vivo), agente en EN, propuesta EN con inversión revelada, mobile 375 en Explorar, trailer completo. Fixes: tiles OSM (CARTO pedía key), mezcla de categorías, loop del trailer, titular del login en 2 líneas.
 
 ## Pendiente
 - Crear repo en GitHub (org developers-insights) — requiere confirmación del usuario.

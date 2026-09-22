@@ -122,16 +122,16 @@ export function buildSeed(nowInput: number = Date.now()): SeedState {
 
   const genCount = TARGETS.comercios - HEROES.length
   const catPlan = shuffle(r, [
-    ...Array(20).fill('alimentos'), ...Array(18).fill('panaderia'), ...Array(12).fill('bebidas'),
-    ...Array(9).fill('lacteos'), ...Array(10).fill('moda'), ...Array(9).fill('cosmeticos'),
+    ...Array(26).fill('alimentos'), ...Array(19).fill('panaderia'), ...Array(8).fill('bebidas'),
+    ...Array(6).fill('lacteos'), ...Array(10).fill('moda'), ...Array(9).fill('cosmeticos'),
   ] as Categoria[]).slice(0, genCount)
   const cityPlan = shuffle(r, [
     ...Array(30).fill('Caracas'), ...Array(18).fill('Valencia'), ...Array(16).fill('Maracaibo'), ...Array(14).fill('Barquisimeto'),
   ] as string[]).slice(0, genCount)
   const nombres = shuffle(r, NOMBRES_COMERCIO)
   const secondary: Record<Categoria, Categoria[]> = {
-    panaderia: ['bebidas', 'lacteos'], alimentos: ['lacteos', 'bebidas'], lacteos: ['alimentos'],
-    bebidas: ['panaderia'], moda: ['moda'], cosmeticos: ['cosmeticos'],
+    panaderia: ['panaderia', 'lacteos'], alimentos: ['alimentos', 'bebidas'], lacteos: ['alimentos'],
+    bebidas: ['bebidas', 'panaderia'], moda: ['moda'], cosmeticos: ['cosmeticos'],
   }
   const gen: ComercioPlan[] = []
   for (let i = 0; i < genCount; i++) {

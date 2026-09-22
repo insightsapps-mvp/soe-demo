@@ -191,7 +191,7 @@ export function ProductTable({
                               <Pencil />
                             </Button>
                             <Button size="sm" variant="soft" className="text-ok" onClick={() => setSellP(p)}>
-                              <CheckCircle2 /> <span className="hidden xl:inline">{L('Vendido', 'Sold')}</span>
+                              <CheckCircle2 /> <span className="hidden 2xl:inline">{L('Vendido', 'Sold')}</span>
                             </Button>
                           </>
                         )}

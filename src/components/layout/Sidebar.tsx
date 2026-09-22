@@ -17,6 +17,7 @@ import {
 import { tourCompletado, useTour } from '@/tour/useTour'
 
 export function BrandMark({ className, small }: { className?: string; small?: boolean }) {
+  const { L } = useT()
   return (
     <div className={cn('flex items-center gap-2.5', className)}>
       <div className={cn('relative flex items-center justify-center rounded-[10px] bg-acento text-white shadow-glow', small ? 'h-7 w-7' : 'h-9 w-9')}>
@@ -27,7 +28,7 @@ export function BrandMark({ className, small }: { className?: string; small?: bo
       </div>
       <div className="leading-none">
         <div className={cn('font-extrabold tracking-tight', small ? 'text-[15px]' : 'text-[17px]')}>SOE</div>
-        {!small && <div className="mt-0.5 text-[10px] font-medium text-text-2">marketplace antidesperdicio</div>}
+        {!small && <div className="mt-0.5 text-[10px] font-medium text-text-2">{L('marketplace antidesperdicio', 'anti-waste marketplace')}</div>}
       </div>
     </div>
   )

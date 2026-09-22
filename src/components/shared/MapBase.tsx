@@ -13,11 +13,14 @@ export function Recenter({ center, zoom }: { center: LatLng; zoom?: number }) {
 }
 
 /** Invalida el tamaño cuando el contenedor cambia (layouts colapsables) */
-export function AutoResize() {
+export function AutoResize({ center }: { center: LatLng }) {
   const map = useMap()
   useEffect(() => {
     const el = map.getContainer()
-    const ro = new ResizeObserver(() => map.invalidateSize())
+    const ro = new ResizeObserver(() => {
+      map.invalidateSize({ pan: false })
+      map.setView([center.lat, center.lng], map.getZoom(), { animate: false })
+    })
     ro.observe(el)
     return () => ro.disconnect()
   }, [map])
@@ -45,10 +48,10 @@ export function MapBase({
       className={cn('h-full w-full', className)}
     >
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>'
-        url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> '
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <AutoResize />
+      <AutoResize center={center} />
       {children}
     </MapContainer>
   )

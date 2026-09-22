@@ -11,7 +11,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/overlay
 import { catKey } from '@/i18n/enums'
 import { CLIENT_LOCATION, formatKm } from '@/domain/geo'
 import { GEO_RADIUS_DEFAULT_KM, GEO_RADIUS_MAX_KM, GEO_RADIUS_MIN_KM, skey } from '@/config/brand'
-import { MapBase, meIcon, pinIcon } from '@/components/shared/MapBase'
+import { MapBase, meIcon, pinIcon, Recenter } from '@/components/shared/MapBase'
 import { ProductCard } from './ProductCard'
 import { HERO_CLIENT_ID } from '@/data/seed'
 import { HOUR, remainingShort } from '@/domain/dates'
@@ -103,6 +103,7 @@ export default function Explorar() {
     <div data-trailer="mapa" className="relative h-full min-h-[300px] overflow-hidden rounded-2xl border border-border shadow-card">
       <MapBase center={CLIENT_LOCATION} zoom={radius > 6 ? 12 : radius > 3 ? 13 : 14}>
         <Circle center={[CLIENT_LOCATION.lat, CLIENT_LOCATION.lng]} radius={radius * 1000} pathOptions={{ color: '#F5711A', weight: 1.5, fillColor: '#F5711A', fillOpacity: 0.06, dashArray: '6 6' }} />
+        <Recenter center={CLIENT_LOCATION} zoom={radius > 6 ? 12 : radius > 3 ? 13 : 14} />
         <Marker position={[CLIENT_LOCATION.lat, CLIENT_LOCATION.lng]} icon={meIcon()} />
         {byComercio.map(({ c, n, km }) => (
           <Marker
@@ -292,7 +293,7 @@ export default function Explorar() {
             </div>
           ) : (
             <>
-              <div className="grid grid-cols-1 gap-3 min-[480px]:grid-cols-2 xl:grid-cols-3">
+              <div className="grid grid-cols-1 gap-3 min-[480px]:grid-cols-2 2xl:grid-cols-3">
                 {feed.slice(0, limit).map((x, i) => (
                   <ProductCard key={x.p.id} p={x.p} c={x.c} km={x.km} now={now} fav={favs.has(x.p.id)} onHover={setHover} active={hover === x.c.id} tourId={i === 0 ? 'primer-producto' : undefined} />
                 ))}

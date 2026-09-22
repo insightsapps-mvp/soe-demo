@@ -78,9 +78,9 @@ export const ProductCard = memo(function ProductCard({
         <div className="mt-2.5 flex items-end justify-between gap-2">
           <div>
             <div className="num text-[11px] text-muted line-through">{formatMoney(p.precioOriginalCents, p.moneda, lang)}</div>
-            <div className="num text-lg font-bold leading-tight text-acento">{formatMoney(p.precioFinalCents, p.moneda, lang)}</div>
+            <div className="num whitespace-nowrap text-lg font-bold leading-tight text-acento">{formatMoney(p.precioFinalCents, p.moneda, lang)}</div>
           </div>
-          <span className="num rounded-full bg-ok-soft px-2 py-0.5 text-[11px] font-bold text-ok">
+          <span className="num whitespace-nowrap rounded-full bg-ok-soft px-2 py-0.5 text-[11px] font-bold text-ok">
             {L('Ahorrás', 'Save')} {formatMoney(ahorro, p.moneda, lang)}
           </span>
         </div>

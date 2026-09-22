@@ -69,7 +69,7 @@ export default function LoginPage() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-[52px] font-extrabold leading-[1.02] tracking-[-0.03em] xl:text-[60px]"
+            className="whitespace-nowrap text-[40px] font-extrabold leading-[1.04] tracking-[-0.03em] xl:text-[50px] 2xl:text-[58px]"
           >
             {L('Lo que sobra hoy,', 'What’s left today')}
             <br />

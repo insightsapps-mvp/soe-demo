@@ -18,7 +18,7 @@ export function Spotlight({ rect, onBackdrop }: { rect: Rect | null; onBackdrop:
             {r && <rect x={r.x} y={r.y} width={r.w} height={r.h} rx={12} fill="black" style={{ transition: 'all .3s cubic-bezier(.2,.8,.2,1)' }} />}
           </mask>
         </defs>
-        <rect width="100%" height="100%" fill="rgba(10,10,10,.55)" mask="url(#soe-tour-mask)" />
+        <rect width="100%" height="100%" fill="#0a0a0a" fillOpacity={0.55} mask="url(#soe-tour-mask)" />
       </svg>
       {r && (
         <div

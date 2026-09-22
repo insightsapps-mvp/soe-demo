@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "soe-dev", "runtimeExecutable": "C:\Users\donce\Documents\soe-demo\.claude\dev.cmd", "runtimeArgs": [], "port": 5190 }
+  ]
+}

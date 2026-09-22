@@ -5,6 +5,7 @@ import { X } from 'lucide-react'
 import { useTrailer } from './useTrailer'
 import { SCENES, type Action } from './scenes'
 import { useDemoStore } from '@/store/useDemoStore'
+import { useSession } from '@/store/useSession'
 import { useT } from '@/i18n/useT'
 import { VirtualCursor, type CursorState } from './VirtualCursor'
 import { WHATSAPP_URL } from '@/config/brand'
@@ -96,6 +97,11 @@ export function TrailerPlayer() {
     [b, point],
   )
 
+  const navRef = useRef(navigate)
+  navRef.current = navigate
+  const actRef = useRef(runAction)
+  actRef.current = runAction
+
   useEffect(() => {
     if (!running) return
     const my = ++token.current
@@ -106,15 +112,18 @@ export function TrailerPlayer() {
         const s = SCENES[i]
         setScene(i)
         setRing(null)
-        if (i === 0) useDemoStore.getState().beginEphemeral()
+        if (i === 0) {
+          useDemoStore.getState().beginEphemeral()
+          useSession.getState().switchRole('admin')
+        }
         const path = typeof s.path === 'function' ? s.path(useDemoStore.getState().data) : s.path
-        if (path) navigate(path)
+        if (path) navRef.current(path)
         const t0 = Date.now()
         await sleep(700)
         window.scrollTo({ top: 0 })
         for (const a of s.actions) {
           if (token.current !== my) return
-          await runAction(a, my)
+          await actRef.current(a, my)
         }
         const left = s.duration - (Date.now() - t0)
         if (left > 0) await sleep(left)
@@ -125,7 +134,8 @@ export function TrailerPlayer() {
     return () => {
       token.current++
     }
-  }, [running, navigate, runAction])
+    // navigate/runAction viven en refs: si fueran dependencias, cada navegación reiniciaría el loop
+  }, [running])
 
   const exit = useCallback(() => {
     token.current++

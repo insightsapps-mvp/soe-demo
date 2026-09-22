@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Info, TrendingDown, TrendingUp, Wrench, Sparkles } from 'lucide-react'
+import { Info, Wrench, Sparkles } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { useT } from '@/i18n/useT'
@@ -81,7 +81,7 @@ export function KpiCard({
                 (delta.good ?? delta.up) ? 'bg-ok-soft text-ok' : 'bg-danger-soft text-danger',
               )}
             >
-              {delta.up ? <TrendingUp className="h-3 w-3" /> : <TrendingDown className="h-3 w-3" />}
+              
               {delta.up ? '▲' : '▼'} {delta.value}
             </span>
           )}
@@ -124,7 +124,7 @@ export function ExpiryCountdown({ vencimiento, now, compact, className }: { venc
   const pct = expired ? 100 : Math.max(4, 100 - (ms / (48 * HOUR)) * 100)
   return (
     <div className={cn('min-w-[92px]', className)}>
-      <div className={cn('flex items-center gap-1.5 text-xs font-semibold', tone)}>
+      <div className={cn('flex items-center gap-1.5 whitespace-nowrap text-xs font-semibold', tone)}>
         {(danger || (warn && !expired)) && <span className={cn('h-1.5 w-1.5 rounded-full', danger ? 'animate-pulsedot bg-danger' : 'animate-pulsedot bg-warning')} />}
         {expired ? t('exp.expired') : (
           <span>

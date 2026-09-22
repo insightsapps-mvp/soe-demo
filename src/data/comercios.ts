@@ -69,7 +69,7 @@ export const HEROES: HeroDef[] = [
     id: 'c-la-espiga', nombre: 'Panadería La Espiga', categoria: 'panaderia', ciudad: 'Caracas', zona: 'Chacao',
     direccion: 'Av. Francisco de Miranda, Edif. Centro Seguros, PB, Chacao', horario: ['Lun a Sáb 6:30–20:00 · Dom 7:00–14:00', 'Mon–Sat 6:30am–8pm · Sun 7am–2pm'],
     lat: 10.4962, lng: -66.8547, activos: 48, vendidosMes: 312, vencidosMes: 4, urgentes: 1, ingresosUsdCents: 61200,
-    mix: ['panaderia', 'panaderia', 'panaderia', 'lacteos', 'bebidas'], ultimaActividadDias: 0,
+    mix: ['panaderia', 'panaderia', 'panaderia', 'panaderia', 'lacteos'], ultimaActividadDias: 0,
   },
   {
     id: 'c-dona-carmen', nombre: 'Abasto Doña Carmen', categoria: 'alimentos', ciudad: 'Valencia', zona: 'La Viña',
@@ -99,7 +99,7 @@ export const HEROES: HeroDef[] = [
     id: 'c-el-trebol', nombre: 'Fuente de Soda El Trébol', categoria: 'bebidas', ciudad: 'Valencia', zona: 'El Viñedo',
     direccion: 'Av. Monseñor Adams, El Viñedo, Valencia', horario: ['Lun a Sáb 7:00–22:00', 'Mon–Sat 7am–10pm'],
     lat: 10.1913, lng: -68.0031, activos: 10, vendidosMes: 83, vencidosMes: 2, urgentes: 1,
-    mix: ['bebidas', 'bebidas', 'panaderia', 'lacteos'], ultimaActividadDias: 0,
+    mix: ['bebidas', 'panaderia', 'panaderia', 'lacteos'], ultimaActividadDias: 0,
   },
   {
     id: 'c-san-rafael', nombre: 'Mercado San Rafael', categoria: 'alimentos', ciudad: 'Maracaibo', zona: 'Tierra Negra',
