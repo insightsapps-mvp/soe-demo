@@ -38,21 +38,21 @@ export function WelcomeModal() {
         onEscapeKeyDown={(e) => e.preventDefault()}
       >
         <BrandMark />
-        <DialogTitle className="mt-6 text-[26px] font-extrabold tracking-tight">{L('Hola Alex y Soe 👋', 'Hi Alex and Soe 👋')}</DialogTitle>
+        <DialogTitle className="mt-6 text-[26px] font-extrabold tracking-tight">{L('Hola Soe 👋', 'Hi Soe 👋')}</DialogTitle>
         <DialogDescription className="mt-2 text-[15px] font-medium text-text">
           {L(
-            'Somos Juan y Fede de Insights. Construimos este MVP para que vean su plataforma funcionando antes de invertir.',
+            'Somos Juan y Fede de Insights. Construimos este MVP para que veas tu plataforma funcionando antes de invertir.',
             'We’re Juan and Fede from Insights. We built this MVP so you can see your platform working before investing.',
           )}
         </DialogDescription>
         <p className="mt-4 text-sm leading-relaxed text-text-2">
           {L(
-            'Soe conecta a los comercios que tienen productos por vencer con la gente que vive cerca. El comercio carga el producto con su descuento, el cliente lo encuentra en el mapa por categoría y distancia, y paga como prefiera — Binance, Zelle o Pago Móvil. Ustedes ven todo desde el panel de administración: cuántos comercios están activos, cuánto se vendió y cuánta comida se salvó.',
+            'Soe conecta a los comercios que tienen productos por vencer con la gente que vive cerca. El comercio carga el producto con su descuento, el cliente lo encuentra en el mapa por categoría y distancia, y paga como prefiera — Binance, Zelle o Pago Móvil. Vos ves todo desde el panel de administración: cuántos comercios están activos, cuánto se vendió y cuánta comida se salvó.',
             'Soe connects shops that have products close to expiry with the people who live nearby. The shop uploads the product with its discount, the customer finds it on the map by category and distance, and pays however they prefer — Binance, Zelle or Pago Móvil. You see everything from the admin panel: how many shops are active, how much was sold and how much food was saved.',
           )}
         </p>
         <p className="mt-4 text-sm italic text-text-2">
-          {L('Si les gusta lo que ven, hagan clic en "Ver la plataforma" y arrancamos.', 'If you like what you see, click "See the platform" and let’s get going.')}
+          {L('Si te gusta lo que ves, hacé clic en "Ver la plataforma" y arrancamos.', 'If you like what you see, click "See the platform" and let’s get going.')}
         </p>
         <Button size="lg" className="mt-6 w-full" onClick={go}>
           {L('Ver la plataforma', 'See the platform')} <ArrowRight />

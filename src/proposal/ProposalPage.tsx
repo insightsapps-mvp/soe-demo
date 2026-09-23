@@ -102,7 +102,7 @@ export default function ProposalPage() {
           <div className="max-w-2xl">
             <Kicker className="mb-3">{L('PROPUESTA COMERCIAL', 'COMMERCIAL PROPOSAL')}</Kicker>
             <h1 className="text-[32px] font-extrabold leading-[1.05] tracking-[-0.02em] sm:text-[44px]">
-              {L('Propuesta para', 'Proposal for')} <span className="text-acento">{L('Alex y Soe', 'Alex and Soe')}</span>
+              {L('Propuesta para', 'Proposal for')} <span className="text-acento">Soe</span>
             </h1>
             <p className="mt-3 text-[15px] leading-relaxed text-text-2">
               {L('Todo lo que incluye el desarrollo de Soe, con acceso directo a cada módulo funcionando.', 'Everything included in building Soe, with direct access to each working module.')}
@@ -203,7 +203,7 @@ export default function ProposalPage() {
         <h2 className="text-[26px] font-extrabold leading-tight tracking-tight sm:text-[32px]">
           {L('Lo que sobra hoy,', 'What’s left today')} <span className="text-acento">{L('no se pierde mañana.', 'isn’t wasted tomorrow.')}</span>
         </h2>
-        <p className="mx-auto mt-2 max-w-lg text-sm text-text-2">{L('Si les gusta lo que ven, escribannos y arrancamos esta semana.', 'If you like what you see, message us and we start this week.')}</p>
+        <p className="mx-auto mt-2 max-w-lg text-sm text-text-2">{L('Si te gusta lo que ves, escribinos y arrancamos esta semana.', 'If you like what you see, message us and we start this week.')}</p>
         <WaButton size="lg" className="mt-6 w-full" />
         <div className="mt-3 text-xs text-muted">Powered by Insights</div>
       </section>

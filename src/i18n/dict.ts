@@ -12,7 +12,7 @@ export const dict = {
   'nav.productos': ['Productos', 'Products'],
   'nav.transacciones': ['Transacciones', 'Transactions'],
   'nav.monedas': ['Monedas y tasas', 'Currencies & rates'],
-  'nav.agente': ['Agente de IA', 'AI Agent'],
+  'nav.agente': ['Paula · Agente de IA', 'Paula · AI Agent'],
   'nav.miDashboard': ['Mi Dashboard', 'My Dashboard'],
   'nav.misProductos': ['Mis Productos', 'My Products'],
   'nav.misVentas': ['Mis Ventas', 'My Sales'],
@@ -22,7 +22,7 @@ export const dict = {
   'nav.mas': ['Más', 'More'],
 
   // Roles
-  'role.admin': ['Administrador', 'Administrator'],
+  'role.admin': ['Administradora', 'Administrator'],
   'role.comercio': ['Comercio', 'Shop'],
   'role.cliente': ['Cliente', 'Customer'],
   'role.adminShort': ['Admin', 'Admin'],
@@ -68,7 +68,7 @@ export const dict = {
   'common.whatsappCta': ['Hablemos por WhatsApp', "Let's talk on WhatsApp"],
 
   // CTA
-  'cta.title': ['¿Les gustó lo que ven? Hablemos y arrancamos.', "Like what you see? Let's talk and get started."],
+  'cta.title': ['¿Te gustó lo que ves? Hablemos y arrancamos.', "Like what you see? Let's talk and get started."],
   'cta.button': ['Avanzar por WhatsApp', 'Move forward on WhatsApp'],
   'cta.want': ['Quiero mi app →', 'I want my app →'],
 

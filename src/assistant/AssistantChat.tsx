@@ -53,7 +53,7 @@ export function AssistantChat({ onNavigate, big }: { onNavigate?: () => void; bi
     <div className="flex h-full min-h-0 flex-col">
       <div className={cn('scrollbar-thin flex-1 overflow-y-auto', big ? 'px-4 py-6 sm:px-8' : 'p-4')}>
         <div className={cn('grid gap-3', big && 'mx-auto max-w-2xl')}>
-          <AgentBubble text={L('Hola, soy el asistente de Soe. Conozco los comercios, productos y ventas de la plataforma. ¿Qué necesitás saber?', 'Hi, I’m the Soe assistant. I know the platform’s shops, products and sales. What do you need to know?')} />
+          <AgentBubble text={L('Hola, soy Paula, tu agente de IA. Conozco los comercios, productos y ventas de la plataforma. ¿Qué necesitás saber?', 'Hi, I’m Paula, your AI agent. I know the platform’s shops, products and sales. What do you need to know?')} />
           {msgs.length === 0 && (
             <div className="mt-1 flex flex-wrap gap-1.5">
               {SUGGESTIONS.map((s) => (
@@ -102,7 +102,7 @@ export function AssistantChat({ onNavigate, big }: { onNavigate?: () => void; bi
           <input
             data-trailer="agente-input"
             className="input"
-            placeholder={L('Preguntá sobre comercios, ventas, vencimientos…', 'Ask about shops, sales, expiry…')}
+            placeholder={L('Preguntale a Paula sobre comercios, ventas, vencimientos…', 'Ask Paula about shops, sales, expiry…')}
             value={text}
             onChange={(e) => setText(e.target.value)}
           />

@@ -24,7 +24,7 @@ export default function AgentPage() {
             </div>
             <div>
               <div className="kicker">{L('INTELIGENCIA', 'INTELLIGENCE')}</div>
-              <h1 className="text-lg font-extrabold tracking-tight">{L('Agente de IA', 'AI Agent')}</h1>
+              <h1 className="text-lg font-extrabold tracking-tight">{L('Paula · Agente de IA', 'Paula · AI Agent')}</h1>
             </div>
           </div>
           <div className="min-h-0 flex-1">

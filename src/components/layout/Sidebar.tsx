@@ -60,7 +60,7 @@ export function RoleSwitcher({ onDone }: { onDone?: () => void }) {
   const role = useSession((s) => s.role)
   const doSwitch = useSwitchRole(onDone)
   const opts: { r: Role; label: string }[] = [
-    { r: 'admin', label: `Alex · ${t('role.adminShort')}` },
+    { r: 'admin', label: `Soe · ${t('role.adminShort')}` },
     { r: 'comercio', label: `La Espiga · ${t('role.comercio')}` },
     { r: 'cliente', label: `María José · ${t('role.cliente')}` },
   ]

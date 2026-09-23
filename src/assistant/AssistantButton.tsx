@@ -25,7 +25,7 @@ export function AssistantButton() {
               <Sparkles className="h-4 w-4" />
             </div>
             <div className="min-w-0 flex-1">
-              <div className="text-sm font-bold">{L('Asistente Soe', 'Soe Assistant')}</div>
+              <div className="text-sm font-bold">Paula</div>
               <div className="flex items-center gap-1 text-[11px] text-ok">
                 <span className="h-1.5 w-1.5 rounded-full bg-ok" /> {L('En línea', 'Online')}
               </div>
@@ -44,7 +44,7 @@ export function AssistantButton() {
       )}
       <button
         onClick={() => setOpen((v) => !v)}
-        aria-label={L('Abrir asistente', 'Open assistant')}
+        aria-label={L('Hablar con Paula', 'Talk to Paula')}
         className="fixed bottom-20 right-4 z-[60] flex h-14 w-14 items-center justify-center rounded-full bg-acento text-white shadow-glow transition hover:scale-105 hover:bg-acento-hover lg:bottom-6 lg:right-6"
       >
         {open ? <X className="h-6 w-6" /> : <Sparkles className="h-6 w-6" />}

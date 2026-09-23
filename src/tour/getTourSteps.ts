@@ -22,7 +22,7 @@ const NAV_COPY: Record<string, Pair> = {
   'productos-admin': ['Todos los productos de la plataforma en un solo lugar. Podés dar de baja por incumplimiento.', 'Every product on the platform in one place. You can remove listings for violations.'],
   transacciones: ['Pagos por Binance, Zelle y Pago Móvil con su log de webhook y reintentos.', 'Binance, Zelle and Pago Móvil payments with their webhook log and retries.'],
   monedas: ['Tasas VES/USD/USDT, historial y el tipo de cambio aplicado en cada venta.', 'VES/USD/USDT rates, history and the exchange rate applied on each sale.'],
-  agente: ['Preguntale al agente lo que necesites: responde con los datos de la plataforma.', 'Ask the agent anything: it answers with the platform’s data.'],
+  agente: ['Preguntale a Paula, tu agente de IA, lo que necesites: responde con los datos de la plataforma.', 'Ask Paula, your AI agent, anything: she answers with the platform’s data.'],
   'mi-dashboard': ['El resumen de tu negocio: ventas, ingresos y lo que vence hoy.', 'Your business summary: sales, revenue and what expires today.'],
   'mis-productos': ['Publicá un producto por vencer y aparece en el mapa de los clientes en segundos. Editás precio y vencimiento en línea.', 'Publish an expiring product and it shows on customers’ map in seconds. Edit price and expiry inline.'],
   'mis-ventas': ['Cada venta con su método de pago, moneda y estado.', 'Every sale with its payment method, currency and status.'],
@@ -33,8 +33,8 @@ const NAV_COPY: Record<string, Pair> = {
 
 const WELCOME: Record<Role, [Pair, Pair]> = {
   admin: [
-    ['Vista Administrador', 'Administrator view'],
-    ['Así ven Alex y Soe la plataforma: todos los comercios, ventas, pagos y el impacto medido. Te muestro dónde está cada cosa.', 'This is how Alex and Soe see the platform: every shop, sale, payment and measured impact. Let me show you around.'],
+    ['Vista Administradora · Soe', 'Administrator view · Soe'],
+    ['Así ve Soe la plataforma: todos los comercios, ventas, pagos y el impacto medido. Te muestro dónde está cada cosa.', 'This is how Soe sees the platform: every shop, sale, payment and measured impact. Let me show you around.'],
   ],
   comercio: [
     ['Vista Comercio · La Espiga', 'Shop view · La Espiga'],
@@ -66,13 +66,13 @@ export function getTourSteps(role: Role, lang: Lang): TourStep[] {
     id: 'switcher',
     target: 'role-switcher',
     title: lang === 'es' ? 'Cambiá de vista' : 'Switch views',
-    body: lang === 'es' ? 'Pasá de Administrador a Comercio o Cliente en vivo, sin cerrar sesión. Cada rol ve su propia app.' : 'Jump from Administrator to Shop or Customer live, without logging out. Each role sees its own app.',
+    body: lang === 'es' ? 'Pasá de Administradora a Comercio o Cliente en vivo, sin cerrar sesión. Cada rol ve su propia app.' : 'Jump from Administrator to Shop or Customer live, without logging out. Each role sees its own app.',
   })
   steps.push({
     id: 'cta',
     target: 'whatsapp-cta',
     title: lang === 'es' ? '¿Arrancamos?' : 'Shall we start?',
-    body: lang === 'es' ? 'Cuando quieran avanzar, escribannos por WhatsApp desde acá.' : 'Whenever you want to move forward, message us on WhatsApp from here.',
+    body: lang === 'es' ? 'Cuando quieras avanzar, escribinos por WhatsApp desde acá.' : 'Whenever you want to move forward, message us on WhatsApp from here.',
   })
   return steps
 }

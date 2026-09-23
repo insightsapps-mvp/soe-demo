@@ -16,7 +16,7 @@ import { useTrailer } from '@/trailer/useTrailer'
 import type { Role } from '@/domain/types'
 
 const PILLS: { role: Role; label: [string, string]; email: string; tone: string }[] = [
-  { role: 'admin', label: ['Alex · Administrador', 'Alex · Administrator'], email: 'alex@soe.demo', tone: 'bg-text text-bg' },
+  { role: 'admin', label: ['Soe · Administradora', 'Soe · Administrator'], email: 'soe@soe.demo', tone: 'bg-text text-bg' },
   { role: 'comercio', label: ['Panadería La Espiga · Comercio', 'Panadería La Espiga · Shop'], email: 'comercio@soe.demo', tone: 'bg-acento text-white' },
   { role: 'cliente', label: ['María José · Cliente', 'María José · Customer'], email: 'cliente@soe.demo', tone: 'bg-ok text-white' },
 ]

@@ -79,8 +79,8 @@ export const SCENES: Scene[] = [
   },
   {
     path: '/agente',
-    title: ['Agente de IA', 'AI Agent'],
-    caption: ['Y le preguntás lo que necesiten.', 'And you ask it whatever you need.'],
+    title: ['Paula · Agente de IA', 'Paula · AI Agent'],
+    caption: ['Y le preguntás a Paula lo que necesites.', 'And you ask Paula whatever you need.'],
     duration: 7000,
     actions: [
       { kind: 'type', target: 'agente-input', text: ['¿Cuántos comercios están activos hoy?', 'How many shops are active today?'] },

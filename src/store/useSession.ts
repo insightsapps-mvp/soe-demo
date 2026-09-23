@@ -9,13 +9,13 @@ export interface DemoUser {
 }
 
 export const DEMO_ACCOUNTS: { email: string; password: string; role: Role }[] = [
-  { email: 'alex@soe.demo', password: 'demo2026', role: 'admin' },
+  { email: 'soe@soe.demo', password: 'demo2026', role: 'admin' },
   { email: 'comercio@soe.demo', password: 'demo2026', role: 'comercio' },
   { email: 'cliente@soe.demo', password: 'demo2026', role: 'cliente' },
 ]
 
 export const ROLE_PERSONA: Record<Role, { name: string; short: string; initials: string; entityId?: string }> = {
-  admin: { name: 'Alex', short: 'Alex', initials: 'A' },
+  admin: { name: 'Soe', short: 'Soe', initials: 'S' },
   comercio: { name: 'Panadería La Espiga', short: 'La Espiga', initials: 'LE', entityId: HERO_COMERCIO_ID },
   cliente: { name: 'María José Pérez', short: 'María José', initials: 'MJ', entityId: HERO_CLIENT_ID },
 }

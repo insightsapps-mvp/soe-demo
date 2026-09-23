@@ -181,7 +181,7 @@ export function TrailerPlayer() {
             <h2 className="mt-6 text-[30px] font-extrabold leading-tight tracking-tight">
               {L('Lo que sobra hoy,', 'What’s left today')} <span className="text-acento">{L('no se pierde mañana.', 'isn’t wasted tomorrow.')}</span>
             </h2>
-            <p className="mt-2 text-sm text-text-2">{L('Una plataforma de Insights para Alex y Soe.', 'A platform by Insights for Alex and Soe.')}</p>
+            <p className="mt-2 text-sm text-text-2">{L('Una plataforma de Insights para Soe.', 'A platform by Insights for Soe.')}</p>
             <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="relative z-[9994] mt-6 inline-flex h-12 items-center gap-2 rounded-[10px] bg-acento px-6 font-bold text-white shadow-glow transition hover:bg-acento-hover">
               <WhatsAppIcon className="h-5 w-5" /> {L('Quiero mi app →', 'I want my app →')}
             </a>
